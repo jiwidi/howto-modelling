@@ -1,0 +1,98 @@
+[
+  {
+    "steps": 8,
+    "block_size": 16,
+    "max_new_tokens": 32,
+    "pass@1": 0.0,
+    "syntax_valid_rate": 0.6,
+    "one_line_format_rate": 1.0,
+    "mean_ms": 70.1,
+    "sample": [
+      "sort -n 1 | uniq -c"
+    ]
+  },
+  {
+    "steps": 16,
+    "block_size": 16,
+    "max_new_tokens": 32,
+    "pass@1": 0.0,
+    "syntax_valid_rate": 0.8,
+    "one_line_format_rate": 1.0,
+    "mean_ms": 88.1,
+    "sample": [
+      "sort -n 3 -c data/app_access.txt"
+    ]
+  },
+  {
+    "steps": 32,
+    "block_size": 16,
+    "max_new_tokens": 32,
+    "pass@1": 0.1,
+    "syntax_valid_rate": 1.0,
+    "one_line_format_rate": 1.0,
+    "mean_ms": 135.7,
+    "sample": [
+      "sort -n 3 -c data/app_access.txt"
+    ]
+  },
+  {
+    "steps": 8,
+    "block_size": 32,
+    "max_new_tokens": 64,
+    "pass@1": 0.0,
+    "syntax_valid_rate": 0.8,
+    "one_line_format_rate": 1.0,
+    "mean_ms": 30.5,
+    "sample": [
+      "sort -f | |"
+    ]
+  },
+  {
+    "steps": 16,
+    "block_size": 32,
+    "max_new_tokens": 64,
+    "pass@1": 0.0,
+    "syntax_valid_rate": 0.8,
+    "one_line_format_rate": 1.0,
+    "mean_ms": 28.5,
+    "sample": [
+      "sort -"
+    ]
+  },
+  {
+    "steps": 32,
+    "block_size": 32,
+    "max_new_tokens": 64,
+    "pass@1": 0.0,
+    "syntax_valid_rate": 1.0,
+    "one_line_format_rate": 1.0,
+    "mean_ms": 43.7,
+    "sample": [
+      "sort -n 1 | uniq -c | head -n 3"
+    ]
+  },
+  {
+    "steps": 64,
+    "block_size": 32,
+    "max_new_tokens": 64,
+    "pass@1": 0.0,
+    "syntax_valid_rate": 1.0,
+    "one_line_format_rate": 1.0,
+    "mean_ms": 91.2,
+    "sample": [
+      "sort - 3"
+    ]
+  },
+  {
+    "steps": 64,
+    "block_size": 64,
+    "max_new_tokens": 64,
+    "pass@1": 0.0,
+    "syntax_valid_rate": 1.0,
+    "one_line_format_rate": 1.0,
+    "mean_ms": 105.2,
+    "sample": [
+      "sort - 3"
+    ]
+  }
+]

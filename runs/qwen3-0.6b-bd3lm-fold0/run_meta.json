@@ -1,0 +1,30 @@
+{
+  "student": "qwen3-0.6b-bd3lm",
+  "hf_id": "dllm-hub/Qwen3-0.6B-diffusion-bd3lm-v0.1",
+  "decoder": "block_diffusion",
+  "fold": 0,
+  "n_splits": 5,
+  "n_train_rows": 19600,
+  "train_families": [
+    "count_extension",
+    "count_matches",
+    "csv_column",
+    "find_extension",
+    "head_lines",
+    "largest_file",
+    "llm_authored",
+    "replace_in_file",
+    "top_frequency"
+  ],
+  "test_families": [
+    "filter_level",
+    "llm_authored",
+    "sorted_unique"
+  ],
+  "epochs": 1,
+  "block_size": 32,
+  "lora_r": 32,
+  "learning_rate": 0.0002,
+  "train_seconds": 800.7,
+  "final_loss": 2.132
+}

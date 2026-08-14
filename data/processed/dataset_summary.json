@@ -1,0 +1,45 @@
+{
+  "n_tasks_generated": 50,
+  "n_tasks_rejected_by_self_validation": 0,
+  "n_tasks_with_verified_solution": 50,
+  "task_yield": 1.0,
+  "n_sft_records": 121,
+  "n_dpo_pairs": 2,
+  "per_teacher": {
+    "openai": {
+      "proposed": 100,
+      "passed": 98,
+      "unsafe": 0
+    },
+    "anthropic": {
+      "proposed": 100,
+      "passed": 98,
+      "unsafe": 0
+    }
+  },
+  "failure_categories": {
+    "stdout_mismatch": 2
+  },
+  "judge_agreement": {
+    "openai": {
+      "n": 198,
+      "agree": 197,
+      "false_positive": 1,
+      "false_negative": 0,
+      "agreement": 0.995
+    },
+    "anthropic": {
+      "n": 168,
+      "agree": 167,
+      "false_positive": 1,
+      "false_negative": 0,
+      "agreement": 0.994
+    }
+  },
+  "seed": 0,
+  "providers": [
+    "openai",
+    "anthropic"
+  ],
+  "elapsed_s": 130.3
+}

@@ -1,0 +1,16 @@
+# Secrets — never commit. Holds OpenAI / Anthropic / HuggingFace credentials.
+.env
+
+.venv/
+__pycache__/
+*.pyc
+
+# Build checkpoints written mid-training; the final adapter is what matters.
+runs/*/checkpoint-*/
+
+# Crash-recovery scratch file written during corpus generation.
+data/raw/tasks.partial.jsonl
+
+# Local scratch
+*.log
+corpus_build.log

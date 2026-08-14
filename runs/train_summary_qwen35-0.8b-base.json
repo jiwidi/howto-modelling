@@ -1,0 +1,30 @@
+[
+  {
+    "student": "qwen35-0.8b-base",
+    "hf_id": "Qwen/Qwen3.5-0.8B-Base",
+    "fold": 0,
+    "n_splits": 5,
+    "n_train_rows": 19600,
+    "train_families": [
+      "count_extension",
+      "count_matches",
+      "csv_column",
+      "find_extension",
+      "head_lines",
+      "largest_file",
+      "llm_authored",
+      "replace_in_file",
+      "top_frequency"
+    ],
+    "test_families": [
+      "filter_level",
+      "llm_authored",
+      "sorted_unique"
+    ],
+    "epochs": 1,
+    "lora_r": 32,
+    "learning_rate": 0.0002,
+    "train_seconds": 496.3,
+    "final_loss": 0.35524278504507883
+  }
+]

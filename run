@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Thin shim so the flag-style invocation works verbatim:
+#   ./run generate-dataset --openai --anthropic 50
+# GNU make parses leading `--flags` as its own options, so it cannot accept them.
+set -euo pipefail
+cd "$(dirname "$0")"
+
+target="${1:-help}"
+shift || true
+
+case "$target" in
+  generate-dataset) exec uv run python -m howto.generate_dataset "$@" ;;
+  train)            exec uv run python -m howto.train "$@" ;;
+  evaluate)         exec uv run python -m howto.evaluate "$@" ;;
+  check)            exec make check ;;
+  *)                exec make help ;;
+esac

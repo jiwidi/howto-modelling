@@ -1,0 +1,16 @@
+# LoRA adapter weights: two of these exceed GitHub's hard 100 MB per-file limit,
+# so they must go through LFS rather than as ordinary blobs.
+*.safetensors filter=lfs diff=lfs merge=lfs -text
+*.bin filter=lfs diff=lfs merge=lfs -text
+
+# Tokenizer payloads shipped alongside each adapter (~20 MB each).
+tokenizer.json filter=lfs diff=lfs merge=lfs -text
+
+# The verified corpus and its SFT projection.
+*.jsonl filter=lfs diff=lfs merge=lfs -text
+
+# Keep shell fixtures and generated commands byte-exact across platforms:
+# the sandbox oracles compare stdout exactly, so a CRLF rewrite would
+# silently invalidate every task.
+*.sh text eol=lf
+*.py text eol=lf

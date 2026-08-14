@@ -1,0 +1,83 @@
+{
+  "n_tasks": 10000,
+  "n_sft_records": 20000,
+  "n_procedural": 1000,
+  "n_llm_authored": 9000,
+  "family_distribution": {
+    "llm_authored": 9000,
+    "replace_in_file": 100,
+    "csv_column": 100,
+    "head_lines": 100,
+    "sorted_unique": 100,
+    "filter_level": 100,
+    "largest_file": 100,
+    "count_matches": 100,
+    "count_extension": 100,
+    "top_frequency": 100,
+    "find_extension": 100
+  },
+  "distinct_signatures": 1768,
+  "top_signatures": [
+    [
+      "grep#0#1",
+      200
+    ],
+    [
+      "sed#0#1",
+      200
+    ],
+    [
+      "sort#0#1",
+      200
+    ],
+    [
+      "awk#0#1",
+      200
+    ],
+    [
+      "grep+wc#1#1",
+      194
+    ],
+    [
+      "cut#0#1",
+      179
+    ],
+    [
+      "cut+tail#1#1",
+      169
+    ],
+    [
+      "head#0#1",
+      168
+    ]
+  ],
+  "rejection_reasons": {
+    "ok": 10739,
+    "commands_disagree_stdout": 3657,
+    "signature_capped": 1678,
+    "ok_procedural": 1000,
+    "primary_nonzero_exit": 885,
+    "primary_no_observable_effect": 498,
+    "unparseable_json": 158,
+    "syntax_error": 106,
+    "commands_disagree_filesystem": 90,
+    "duplicate_request": 61,
+    "primary_timeout_or_sandbox_error": 17,
+    "nondeterministic": 16,
+    "commands_not_distinct": 5,
+    "bad_setup_files": 4,
+    "needs_two_commands": 4
+  },
+  "author_models": {
+    "gemini": "gemini-3.5-flash-lite"
+  },
+  "per_author": {
+    "gemini": {
+      "attempts": 16179,
+      "kept": 9000,
+      "yield": 0.556
+    }
+  },
+  "seed": 0,
+  "elapsed_s": 947.3
+}
