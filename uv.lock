@@ -532,6 +532,7 @@ dependencies = [
 [package.optional-dependencies]
 export = [
     { name = "gguf" },
+    { name = "huggingface-hub" },
 ]
 
 [package.metadata]
@@ -542,6 +543,7 @@ requires-dist = [
     { name = "datasets", specifier = ">=4.0.0" },
     { name = "gguf", marker = "extra == 'export'", specifier = ">=0.17.0" },
     { name = "google-genai", specifier = ">=2.17.0" },
+    { name = "huggingface-hub", marker = "extra == 'export'", specifier = ">=0.34.0" },
     { name = "numpy", specifier = ">=2.1.0" },
     { name = "openai", specifier = ">=1.109.1" },
     { name = "peft", specifier = ">=0.17.0" },

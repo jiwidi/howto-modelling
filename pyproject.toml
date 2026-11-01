@@ -24,8 +24,8 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# Only needed for GGUF export experiments; not part of the PoC critical path.
-export = ["gguf>=0.17.0"]
+# Only needed for pinned GGUF deployment export; training does not install it.
+export = ["gguf>=0.17.0", "huggingface-hub>=0.34.0"]
 
 [tool.uv]
 # RTX 5090 (Blackwell, sm_120) requires a CUDA 12.8+ build of torch.

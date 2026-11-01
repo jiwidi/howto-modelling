@@ -43,9 +43,10 @@ Latency is a single warm request, bf16.*
 **0.00% forbidden side-effects** across all 20 model-variants, unintended writes
 ≤1.5%.
 
-Two candidates worth shipping: **`qwen35-2b`** for accuracy (74.5%, 182 ms,
-4 GB), **`qwen25-coder-0.5b`** for footprint (63.7%, **86 ms, 1.14 GB**) — 11
-points cheaper for 2× the speed and a third of the memory.
+Three measured Pareto tiers are deployment candidates: **`qwen35-2b`** for
+accuracy (74.5%, 182 ms, 4 GB), **`qwen35-0.8b`** for balance (67.8%, 180 ms,
+1.62 GB), and **`qwen25-coder-0.5b`** for footprint (63.7%, **86 ms,
+1.14 GB**). Setup exposes only these tuned winners, not every experiment.
 
 The **block-diffusion track failed on quality** (1.5% pass@1, 48.8% syntax
 validity). It decodes a whole block in parallel and is genuinely fast, but at
@@ -127,8 +128,18 @@ the host filesystem is read-only.
 | `src/howto/diffusion.py` | BD3LM parallel decoding |
 | `src/howto/evaluate.py` | executable pass@1, safety, format metrics |
 | `src/howto/benchmark.py` | response time, throughput, memory |
+| `src/howto/export.py` | pinned, offline-by-default three-tier LoRA/GGUF export |
+| `src/howto/catalog.py` | qualified immutable setup-catalog composer |
 | `runs/` | trained LoRA adapters (git-lfs) |
 | `reports/` | evaluation, latency, summary tables |
+
+The production export path and its provenance/licensing gates are documented in
+[`docs/export-models.md`](docs/export-models.md). Run `make test-export`
+for its download-free unit suite; the exporter itself is local-only unless the
+operator explicitly sets `ALLOW_DOWNLOADS=1`. Publication additionally needs
+execution-grounded reports for the exact non-retry HowTo prompt policy and
+vendored runtime on both macOS and Linux; research BF16 scores alone cannot
+make an artifact installable.
 
 ## Known issues and limits
 
@@ -142,7 +153,8 @@ the host filesystem is read-only.
   emit and hallucinates further turns. `stop_token_ids()` in `evaluate.py`
   handles this; anything consuming these adapters must do the same.
 - Later recipe stages (execution-ranked DPO, on-policy GKD, RLVR) are not built.
-- No GGUF export or quantization sweep yet.
+- The pinned GGUF exporter and qualification catalog are implemented, but the
+  Q4/Q5/Q6 embedded-runtime sweep has not yet been executed.
 
 ## Licensing note
 

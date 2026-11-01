@@ -4,6 +4,7 @@
 .venv/
 __pycache__/
 *.pyc
+dist/
 
 # Build checkpoints written mid-training; the final adapter is what matters.
 runs/*/checkpoint-*/
