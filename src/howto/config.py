@@ -8,6 +8,8 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+from .prompts import TRAINING_SYSTEM_PROMPT
+
 REPO_ROOT = Path(__file__).resolve().parents[2]
 DATA_DIR = REPO_ROOT / "data"
 RAW_DIR = DATA_DIR / "raw"
@@ -174,13 +176,7 @@ DIFFUSION_TEACHER = "google/diffusiongemma-26B-A4B-it"
 DEFAULT_CANDIDATES = ("qwen3-0.6b", "qwen25-coder-0.5b")
 
 # Deployment/eval contract: the student emits exactly one line of shell, no prose.
-SYSTEM_PROMPT = (
-    "You translate a natural-language request into a single POSIX/bash command line.\n"
-    "Rules:\n"
-    "- Output ONLY the command. No prose, no markdown fences, no explanation.\n"
-    "- The command runs with the working directory set to the task workspace.\n"
-    "- Do not use sudo, network access, or destructive operations unless explicitly asked.\n"
-)
+SYSTEM_PROMPT = TRAINING_SYSTEM_PROMPT
 
 
 @dataclass
